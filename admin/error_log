@@ -1,0 +1,535 @@
+[13-Feb-2020 12:19:48 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(31): DB\MySQLi->__construct('db1.noc24online...', 'clientdnations_...', 'CH6#,r3$?7w^', 'clientdnations_...', '3306')
+#1 /home/clientdnations/public_html/newfl/system/framework.php(80): DB->__construct('mysqli', 'db1.noc24online...', 'clientdnations_...', 'CH6#,r3$?7w^', 'clientdnations_...', '3306')
+#2 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#3 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 10
+[13-Feb-2020 12:19:48 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(31): DB\MySQLi->__construct('db1.noc24online...', 'clientdnations_...', 'CH6#,r3$?7w^', 'clientdnations_...', '3306')
+#1 /home/clientdnations/public_html/newfl/system/framework.php(80): DB->__construct('mysqli', 'db1.noc24online...', 'clientdnations_...', 'CH6#,r3$?7w^', 'clientdnations_...', '3306')
+#2 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#3 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 10
+[13-Feb-2020 12:32:14 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT `data` FROM `flnew_session` WHERE session_id = '57668ce2b79db363041daac529' AND expire > 1581597101 in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT `data` F...')
+#1 /home/clientdnations/public_html/newfl/system/library/session/db.php(21): DB->query('SELECT `data` F...')
+#2 /home/clientdnations/public_html/newfl/system/library/session.php(72): Session\DB->read('57668ce2b79db36...')
+#3 /home/clientdnations/public_html/newfl/system/framework.php(106): Session->start('57668ce2b79db36...')
+#4 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#5 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[13-Feb-2020 12:32:59 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT `data` FROM `flnew_session` WHERE session_id = '7f0abebac9732f9a93dbc100fc' AND expire > 1581597139 in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT `data` F...')
+#1 /home/clientdnations/public_html/newfl/system/library/session/db.php(21): DB->query('SELECT `data` F...')
+#2 /home/clientdnations/public_html/newfl/system/library/session.php(72): Session\DB->read('7f0abebac9732f9...')
+#3 /home/clientdnations/public_html/newfl/system/framework.php(106): Session->start('7f0abebac9732f9...')
+#4 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#5 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[02-Mar-2020 11:49:05 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (52) in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+S in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[02-Mar-2020 11:49:17 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (53) in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+S in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[02-Mar-2020 11:49:52 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (54) in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+S in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[16-Mar-2020 05:33:39 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT `data` FROM `flnew_session` WHERE session_id = '125c11a4fa3c3a548aa79f5a21' AND expire > 1584336776 in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT `data` F...')
+#1 /home/clientdnations/public_html/newfl/system/library/session/db.php(21): DB->query('SELECT `data` F...')
+#2 /home/clientdnations/public_html/newfl/system/library/session.php(72): Session\DB->read('125c11a4fa3c3a5...')
+#3 /home/clientdnations/public_html/newfl/system/framework.php(106): Session->start('125c11a4fa3c3a5...')
+#4 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#5 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[16-Mar-2020 05:36:40 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM flnew_user WHERE user_id = '1' AND status = '1' in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT * FROM f...')
+#1 /home/clientdnations/public_html/newfl/system/library/cart/user.php(15): DB->query('SELECT * FROM f...')
+#2 /home/clientdnations/public_html/newfl/admin/controller/startup/login.php(13): Cart\User->__construct(Object(Registry))
+#3 /home/clientdnations/storage/modification/system/engine/action.php(79): ControllerStartupLogin->index()
+#4 /home/clientdnations/storage/modification/system/engine/router.php(72): Action->execute(Object(Registry))
+#5 /home/clientdnations/storage/modification/system/engine/router.php(46): Router->execute(Object(Action))
+#6 /home/clientdnations/public_html/newfl/system/framework.php(165): Router->dispatch(Object(Action), Object(Action))
+#7 /home/clientd in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[16-Mar-2020 05:39:39 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT `data` FROM `flnew_session` WHERE session_id = '125c11a4fa3c3a548aa79f5a21' AND expire > 1584337144 in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT `data` F...')
+#1 /home/clientdnations/public_html/newfl/system/library/session/db.php(21): DB->query('SELECT `data` F...')
+#2 /home/clientdnations/public_html/newfl/system/library/session.php(72): Session\DB->read('125c11a4fa3c3a5...')
+#3 /home/clientdnations/public_html/newfl/system/framework.php(106): Session->start('125c11a4fa3c3a5...')
+#4 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#5 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[16-Mar-2020 05:43:40 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT `data` FROM `flnew_session` WHERE session_id = '192d14c3265003fd9cc39dfce5' AND expire > 1584337375 in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT `data` F...')
+#1 /home/clientdnations/public_html/newfl/system/library/session/db.php(21): DB->query('SELECT `data` F...')
+#2 /home/clientdnations/public_html/newfl/system/library/session.php(72): Session\DB->read('192d14c3265003f...')
+#3 /home/clientdnations/public_html/newfl/system/framework.php(106): Session->start('192d14c3265003f...')
+#4 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#5 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[16-Mar-2020 05:43:57 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT `data` FROM `flnew_session` WHERE session_id = '125c11a4fa3c3a548aa79f5a21' AND expire > 1584337400 in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT `data` F...')
+#1 /home/clientdnations/public_html/newfl/system/library/session/db.php(21): DB->query('SELECT `data` F...')
+#2 /home/clientdnations/public_html/newfl/system/library/session.php(72): Session\DB->read('125c11a4fa3c3a5...')
+#3 /home/clientdnations/public_html/newfl/system/framework.php(106): Session->start('125c11a4fa3c3a5...')
+#4 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#5 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[16-Mar-2020 05:48:55 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT `data` FROM `flnew_session` WHERE session_id = '192d14c3265003fd9cc39dfce5' AND expire > 1584337701 in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT `data` F...')
+#1 /home/clientdnations/public_html/newfl/system/library/session/db.php(21): DB->query('SELECT `data` F...')
+#2 /home/clientdnations/public_html/newfl/system/library/session.php(72): Session\DB->read('192d14c3265003f...')
+#3 /home/clientdnations/public_html/newfl/system/framework.php(106): Session->start('192d14c3265003f...')
+#4 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#5 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[16-Mar-2020 05:48:55 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT `data` FROM `flnew_session` WHERE session_id = '192d14c3265003fd9cc39dfce5' AND expire > 1584337701 in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT `data` F...')
+#1 /home/clientdnations/public_html/newfl/system/library/session/db.php(21): DB->query('SELECT `data` F...')
+#2 /home/clientdnations/public_html/newfl/system/library/session.php(72): Session\DB->read('192d14c3265003f...')
+#3 /home/clientdnations/public_html/newfl/system/framework.php(106): Session->start('192d14c3265003f...')
+#4 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#5 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[16-Mar-2020 05:51:27 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT `data` FROM `flnew_session` WHERE session_id = '192d14c3265003fd9cc39dfce5' AND expire > 1584337850 in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/clientdnations/public_html/newfl/system/library/db.php(45): DB\MySQLi->query('SELECT `data` F...')
+#1 /home/clientdnations/public_html/newfl/system/library/session/db.php(21): DB->query('SELECT `data` F...')
+#2 /home/clientdnations/public_html/newfl/system/library/session.php(72): Session\DB->read('192d14c3265003f...')
+#3 /home/clientdnations/public_html/newfl/system/framework.php(106): Session->start('192d14c3265003f...')
+#4 /home/clientdnations/public_html/newfl/system/startup.php(104): require_once('/home/clientdna...')
+#5 /home/clientdnations/public_html/newfl/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/clientdnations/public_html/newfl/system/library/db/mysqli.php on line 40
+[04-Nov-2020 04:54:44 UTC] PHP Warning:  fopen(/home/fl1857/public_html/storage/logs/error.log): failed to open stream: No such file or directory in /home/fl1857/public_html/system/library/log.php on line 22
+[04-Nov-2020 04:54:44 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 04:54:44 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 04:54:44 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 04:54:44 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 04:54:44 UTC] PHP Fatal error:  Uncaught Error: Class 'Scssc' not found in /home/fl1857/public_html/admin/controller/startup/sass.php:9
+Stack trace:
+#0 /home/fl1857/public_html/system/engine/action.php(79): ControllerStartupSass->index()
+#1 /home/fl1857/public_html/system/engine/router.php(67): Action->execute(Object(Registry))
+#2 /home/fl1857/public_html/system/engine/router.php(46): Router->execute(Object(Action))
+#3 /home/fl1857/public_html/system/framework.php(165): Router->dispatch(Object(Action), Object(Action))
+#4 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#5 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/fl1857/public_html/admin/controller/startup/sass.php on line 9
+[04-Nov-2020 04:56:41 UTC] PHP Warning:  fopen(/home/fl1857/public_html/storage/logs/error.log): failed to open stream: No such file or directory in /home/fl1857/public_html/system/library/log.php on line 22
+[04-Nov-2020 04:56:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 04:56:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 04:56:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 04:56:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 04:56:41 UTC] PHP Fatal error:  Uncaught Error: Class 'Scssc' not found in /home/fl1857/public_html/admin/controller/startup/sass.php:9
+Stack trace:
+#0 /home/fl1857/public_html/system/engine/action.php(79): ControllerStartupSass->index()
+#1 /home/fl1857/public_html/system/engine/router.php(67): Action->execute(Object(Registry))
+#2 /home/fl1857/public_html/system/engine/router.php(46): Router->execute(Object(Action))
+#3 /home/fl1857/public_html/system/framework.php(165): Router->dispatch(Object(Action), Object(Action))
+#4 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#5 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/fl1857/public_html/admin/controller/startup/sass.php on line 9
+[04-Nov-2020 05:09:59 UTC] PHP Warning:  fopen(/home/fl1857/public_html/storage/logs/error.log): failed to open stream: No such file or directory in /home/fl1857/public_html/system/library/log.php on line 22
+[04-Nov-2020 05:09:59 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:09:59 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:09:59 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:09:59 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:09:59 UTC] PHP Fatal error:  Uncaught Error: Class 'Scssc' not found in /home/fl1857/public_html/admin/controller/startup/sass.php:9
+Stack trace:
+#0 /home/fl1857/public_html/system/engine/action.php(79): ControllerStartupSass->index()
+#1 /home/fl1857/public_html/system/engine/router.php(67): Action->execute(Object(Registry))
+#2 /home/fl1857/public_html/system/engine/router.php(46): Router->execute(Object(Action))
+#3 /home/fl1857/public_html/system/framework.php(165): Router->dispatch(Object(Action), Object(Action))
+#4 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#5 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/fl1857/public_html/admin/controller/startup/sass.php on line 9
+[04-Nov-2020 05:10:11 UTC] PHP Warning:  fopen(/home/fl1857/public_html/storage/logs/error.log): failed to open stream: No such file or directory in /home/fl1857/public_html/system/library/log.php on line 22
+[04-Nov-2020 05:10:11 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:10:11 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:10:11 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:10:11 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:10:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Scssc' not found in /home/fl1857/public_html/admin/controller/startup/sass.php:9
+Stack trace:
+#0 /home/fl1857/public_html/system/engine/action.php(79): ControllerStartupSass->index()
+#1 /home/fl1857/public_html/system/engine/router.php(67): Action->execute(Object(Registry))
+#2 /home/fl1857/public_html/system/engine/router.php(46): Router->execute(Object(Action))
+#3 /home/fl1857/public_html/system/framework.php(165): Router->dispatch(Object(Action), Object(Action))
+#4 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#5 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/fl1857/public_html/admin/controller/startup/sass.php on line 9
+[04-Nov-2020 05:12:41 UTC] PHP Warning:  fopen(/home/fl1857/public_html/storage/logs/error.log): failed to open stream: No such file or directory in /home/fl1857/public_html/system/library/log.php on line 22
+[04-Nov-2020 05:12:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:12:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:12:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:12:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:12:41 UTC] PHP Fatal error:  Uncaught Error: Class 'Scssc' not found in /home/fl1857/public_html/admin/controller/startup/sass.php:9
+Stack trace:
+#0 /home/fl1857/public_html/system/engine/action.php(79): ControllerStartupSass->index()
+#1 /home/fl1857/public_html/system/engine/router.php(67): Action->execute(Object(Registry))
+#2 /home/fl1857/public_html/system/engine/router.php(46): Router->execute(Object(Action))
+#3 /home/fl1857/public_html/system/framework.php(165): Router->dispatch(Object(Action), Object(Action))
+#4 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#5 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/fl1857/public_html/admin/controller/startup/sass.php on line 9
+[04-Nov-2020 05:23:39 UTC] PHP Warning:  fopen(/home/fl1857/public_html/storage/logs/error.log): failed to open stream: No such file or directory in /home/fl1857/public_html/system/library/log.php on line 22
+[04-Nov-2020 05:23:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:23:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:23:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:23:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/fl1857/public_html/system/library/log.php on line 31
+[04-Nov-2020 05:23:39 UTC] PHP Fatal error:  Uncaught Error: Class 'Scssc' not found in /home/fl1857/public_html/admin/controller/startup/sass.php:9
+Stack trace:
+#0 /home/fl1857/public_html/system/engine/action.php(79): ControllerStartupSass->index()
+#1 /home/fl1857/public_html/system/engine/router.php(67): Action->execute(Object(Registry))
+#2 /home/fl1857/public_html/system/engine/router.php(46): Router->execute(Object(Action))
+#3 /home/fl1857/public_html/system/framework.php(165): Router->dispatch(Object(Action), Object(Action))
+#4 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#5 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#6 {main}
+  thrown in /home/fl1857/public_html/admin/controller/startup/sass.php on line 9
+[07-Nov-2020 08:09:39 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (61) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 08:16:13 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (62) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 08:22:30 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (63) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 08:26:50 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (64) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 10:43:04 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (65) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 10:44:59 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (66) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 10:46:12 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (67) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 10:46:55 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (68) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 10:48:32 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (69) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 10:49:06 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (70) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 10:50:12 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (71) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 10:51:09 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (72) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 10:58:37 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (73) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 11:02:49 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (74) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 11:07:33 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (75) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 11:09:33 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (76) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 11:12:09 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (77) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 11:13:14 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (78) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 11:21:01 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (79) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 11:22:56 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (80) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 11:23:00 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (81) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 12:42:19 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (82) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 12:44:04 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (83) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 13:15:43 UTC] PHP Fatal error:  Uncaught Exception: Error: Duplicate entry '0' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO `flnew_product_advertise_google` (`product_id`, `store_id`, `google_product_category`) SELECT p.product_id, p2s.store_id, (SELECT c2gpc.google_product_category FROM `flnew_product_to_category` p2c LEFT JOIN `flnew_category_path` cp ON (p2c.category_id = cp.category_id) LEFT JOIN `flnew_category_to_google_product_category` c2gpc ON (c2gpc.category_id = cp.path_id AND c2gpc.store_id = 0) WHERE p2c.product_id = p.product_id AND c2gpc.google_product_category IS NOT NULL ORDER BY cp.level DESC LIMIT 0,1) as `google_product_category` FROM `flnew_product` p LEFT JOIN `flnew_product_to_store` p2s ON (p2s.product_id = p.product_id AND p2s.store_id = 0) LEFT JOIN `flnew_product_advertise_google` pag ON (pag.product_id = p.product_id AND pag.store_id=p2s.store_id) WHERE pag.product_id IS NULL AND p2s.store_id IS NOT NULL AND p.product_id IN (84) in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[07-Nov-2020 13:25:53 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 13:26:49 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 13:26:54 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 13:44:08 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 13:44:38 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 13:44:48 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:09:53 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:10:12 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:10:40 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:16:02 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:16:05 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:17:58 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:18:02 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:22:36 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:24:22 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:24:38 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:24:39 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:25:05 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:26:06 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:26:22 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:27:07 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:29:04 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:29:08 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:29:17 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:29:26 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:29:45 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:29:53 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:30:09 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:30:30 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:30:33 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:32:35 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:32:42 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:32:48 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:32:57 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:37:30 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:38:21 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[07-Nov-2020 14:38:57 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:34:57 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:35:24 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:35:27 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:45:51 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:46:14 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:46:22 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:46:23 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:46:46 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:49:58 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:50:11 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:50:45 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:50:48 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:50:50 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:51:36 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:53:40 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:54:33 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:56:25 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:56:33 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:56:36 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:57:18 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:58:54 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:59:07 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:59:37 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:59:43 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:59:51 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 05:59:58 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 06:00:10 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 06:00:27 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 06:11:40 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 07:22:55 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 07:23:08 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 07:23:15 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 07:49:08 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 07:49:31 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 07:49:49 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 07:49:50 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:20:18 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:20:26 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:20:54 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:26:43 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:30:50 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:30:57 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:31:28 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:31:39 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:31:59 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:32:49 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:33:20 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:33:24 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:33:47 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:34:09 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:34:30 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:35:08 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:35:57 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:37:55 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:37:58 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:38:04 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:38:08 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:38:45 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:39:47 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:39:50 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:40:36 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:40:39 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:40:41 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:40:43 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:41:05 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:41:08 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:41:09 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:41:12 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:41:15 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:42:18 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:43:08 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:43:11 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:43:14 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[08-Nov-2020 10:44:36 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[10-Nov-2020 12:58:34 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 12288 bytes) in /home/fl1857/public_html/system/library/image.php on line 47
+[11-Nov-2020 07:10:54 UTC] PHP Fatal error:  Uncaught Exception: Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM flnew_user WHERE user_id = '3' AND status = '1' in /home/fl1857/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(45): DB\MySQLi->query('SELECT * FROM f...')
+#1 /home/fl1857/public_html/system/library/cart/user.php(15): DB->query('SELECT * FROM f...')
+#2 /home/fl1857/public_html/admin/controller/startup/login.php(13): Cart\User->__construct(Object(Registry))
+#3 /home/fl1857/storage/modification/system/engine/action.php(79): ControllerStartupLogin->index()
+#4 /home/fl1857/storage/modification/system/engine/router.php(72): Action->execute(Object(Registry))
+#5 /home/fl1857/storage/modification/system/engine/router.php(46): Router->execute(Object(Action))
+#6 /home/fl1857/public_html/system/framework.php(165): Router->dispatch(Object(Action), Object(Action))
+#7 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#8 /home/fl1857/public in /home/fl1857/public_html/system/library/db/mysqli.php on line 40
+[08-Feb-2021 08:08:47 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[19-Feb-2021 03:39:34 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[26-Mar-2022 17:22:18 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:24:49 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:24:53 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:24:56 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:25:00 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:25:05 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:25:17 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:25:22 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:25:39 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:25:46 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:26:18 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:26:19 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:26:20 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10
+[29-Mar-2022 19:26:31 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/fl1857/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/fl1857/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#1 /home/fl1857/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'fl1857_user', 'PU6#3c)7*6Zl', 'fl1857_database', '3306')
+#2 /home/fl1857/public_html/system/startup.php(104): require_once('/home/fl1857/pu...')
+#3 /home/fl1857/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/fl1857/public_html/system/library/db/mysqli.php on line 10

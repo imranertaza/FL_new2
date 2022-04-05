@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>offline credit card</name>
+  <code>offline credit card</code>
+  <version>1.0</version>
+  <author>Adnan Ahmad</author>
+  <link>https://www.fb.com/adnan00733</link>
+  <file path="admin/view/template/sale/order_info.twig">
+    <operation>
+      <search regex="false">
+        <![CDATA[id="tab-history"]]>
+      </search>
+      <add position="after">
+        <![CDATA[{{ card_detail }}]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/controller/sale/order.php">
+	  <operation>
+      <search regex="false">
+        <![CDATA[public function index() {]]>
+      </search>
+      <add position="before">
+        <![CDATA[
+              public function delete_card_by_order_id($order_id = 0) {
+                $order_id = isset($this->request->get['order_id']) ? (int)$this->request->get['order_id'] : $order_id;
+                $this->db->query("DELETE FROM " . DB_PREFIX . "offcc WHERE order_id = '" . (int)$order_id . "'");
+
+                $this->response->redirect($this->url->link('sale/order/info', 'user_token=' . $this->session->data['user_token']. '&order_id='.$order_id, true));
+              }
+
+              public function get_card_by_order_id($order_id = 0) {
+
+                $delete_card = $this->url->link('sale/order/delete_card_by_order_id', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . (int)$this->request->get['order_id'], true);
+                $html = '';
+                $order_id = isset($this->request->get['order_id']) ? (int)$this->request->get['order_id'] : $order_id;
+                $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "offcc WHERE order_id = '" . (int)$order_id . "'");
+
+                if($query->num_rows) {
+
+                  if(!isset($this->encryption)) {
+                    //$this->load->library('encryption');
+                  }
+                  
+                  //$card_number = $this->encryption->decrypt($this->config->get('config_encryption'),$query->row['card_number']);
+                  $card_number = $query->row['card_number'];
+                
+                  $html .= '<div id="offcc">';
+                  $html .= '';
+                  $html .= '	<table class="table table-bordered table-hover">';
+                  $html .= '		<thead>
+                                  <th colspan="2" class="text-center">
+                                    <h3>Offline Credit card detail</h3>
+                                  </th>
+                                </thead>';
+                  $html .= '		<tr>
+                                  <td style="width: 50%;">Card Owner</td>
+                                  <td style="width: 50%;">'.$query->row['card_owner'].'</td>
+                                </tr>';
+                  $html .= '		<tr>
+                                  <td style="width: 50%;">Card Number</td>
+                                  <td style="width: 50%;">'.$card_number.'</td>
+                                </tr>';
+                  $html .= '		<tr>
+                                  <td style="width: 50%;">Card type</td>
+                                  <td style="width: 50%;">'.$query->row['card_type'].'</td>
+                                </tr>';
+                  $html .= '		<tr>
+                                  <td style="width: 50%;">cvc</td>
+                                  <td style="width: 50%;">'.$query->row['cvc'].'</td>
+                                </tr>';
+                  $html .= '		<tr>
+                                  <td style="width: 50%;">Expiry date</td>
+                                  <td style="width: 50%;">'.$query->row['expiry_date'].'</td>
+                                </tr>';
+                  $html .= '	</table>';
+
+                  $html .= '	<div class="clearfix">
+                                <div class="button btn btn-info pull-right" id="delete-offcc">
+                                  <a href="'.$delete_card.'" style="color:white">Delete Card</a>
+                                </div>
+                              </div>';
+                  $html .= '</div>';
+                  
+                }
+
+                return $html;
+
+              }
+        ]]>
+      </add>
+    </operation>
+
+    <operation>
+      <search regex="false">
+        <![CDATA[$data['tabs'] = array();]]>
+      </search>
+      <add position="before">
+        <![CDATA[$data['card_detail'] = $this->get_card_by_order_id($this->request->get['order_id']);]]>
+      </add>
+    </operation>
+
+  </file>
+
+</modification>
+
+
+	
